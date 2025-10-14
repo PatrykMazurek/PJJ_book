@@ -1,6 +1,6 @@
 # String i tablice
 
-## Teoria&#x20;
+## Teoria
 
 Rozdział 2 - Podstawowe elementy języka Java
 
@@ -8,9 +8,9 @@ Rozdział 3 - Podstawowe elementy języka Java
 
 ### Klasa String
 
-Obiekty String w języku Java jest niemodyfikowalny, czyli jeżeli zostanie utworzony to modyfikacja polega na utworzeniu nowego obiektu.&#x20;
+Obiekty String w języku Java jest niemodyfikowalny, czyli jeżeli zostanie utworzony to modyfikacja polega na utworzeniu nowego obiektu.
 
-Praca z klasą String&#x20;
+Praca z klasą String
 
 ```java
 String text = "";
@@ -19,7 +19,7 @@ String text2 = "Dowolny tekst";
 
 **Łączenie stringów (Konkatenacja)**
 
-W Javie, podobnie jak w większości innych języków programowania, można łączyć (konkatenować)\
+W Javie, podobnie jak w większości innych języków programowania, można łączyć (konkatenować)\
 łańcuchy za pomocą znaku `+`.
 
 ```java
@@ -38,10 +38,10 @@ System.out.println("Odpowiedź brzmi " + answer);
 
 **Porównywanie łańcuchów tekstowych**
 
-Do porównywania, czy dwa łańcuchy są identyczne, służy metoda `equals()`&#x20;
+Do porównywania, czy dwa łańcuchy są identyczne, służy metoda `equals()`
 
 ```java
-tekst1.quale(tekst2)
+tekst1.equale(tekst2)
 ```
 
 Metoda zwróci wartość `true` jeżeli tekst1 i tekst2 są identyczne, lub `false` w przeciwnym przypadku. Metoda porównuje łańcuchy znaków z pominięciem wielkości liter. Nie zalecane jest stosowanie `==!` i `==` do porównywania znaków, może to powodować błąd, którego będzie ciężko z identyfikować.
@@ -56,7 +56,7 @@ Metoda zwróci wartość `true` jeżeli tekst1 i tekst2 są identyczne, lub `fal
 
 ### Klasa StringBuilder
 
-&#x20;Obiekt `String` jest niemodyfikowalny (immutable), co w przypadku modyfikacji łańcucha znaków (`+`, `concat()`) przez wiele mniejszych łańcuchów znaków może być kosztowne pamięciowo.
+Obiekt `String` jest niemodyfikowalny (immutable), co w przypadku modyfikacji łańcucha znaków (`+`, `concat()`) przez wiele mniejszych łańcuchów znaków może być kosztowne pamięciowo.
 
 Rozwiązaniem problemu modyfikacji obiektu String jest klasa StringBuilder. Aby rozpocząć składanie łańcucha znaków musimy utworzyć nowy obiekt `builder` klasy `StringBuilder`
 
@@ -71,7 +71,7 @@ W tym momencie możemy dodawać, wstawiać lub edytować nasz łańcuch znaków.
 * `delete(int startIndex, int endIndex)` - Usuwanie znaków znajdujących się na pozycjach `startIndex` i `endIndex - 1`.
 * Więcej przydatnych metod można znaleźć w dokumentacji klasy [StringBuilder](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html).
 
-Po złączeniu łańcucha znaków pozostaje nam zwrócić wynik do obiektu `String` wykonując metodę `toString()`.&#x20;
+Po złączeniu łańcucha znaków pozostaje nam zwrócić wynik do obiektu `String` wykonując metodę `toString()`.
 
 ```java
 String completedString = builder.toString();
@@ -81,7 +81,7 @@ String completedString = builder.toString();
 
 Tworzenie tablic jedno wymiarowych `typ[] nazwa = typ[rozmiar];`
 
-`int[] number = new int[10];`&#x20;
+`int[] number = new int[10];`
 
 Dostęp do poszczególnych elementów tablicy: `nazwa[idx]` gdzie `idx` to pozycja z tabeli liczona od zera.
 
@@ -92,13 +92,13 @@ System.out.prntln(nazwa[5]);
 
 W ten sposób można wyświetlać wartość z tablicy i dodawać wartość do tablicy.
 
-Tworzenie tabel dwuwymiarowych `typ[][] nazwa = new typ[wiersze][kolumny];`&#x20;
+Tworzenie tabel dwuwymiarowych `typ[][] nazwa = new typ[wiersze][kolumny];`
 
 `int[][] number2D = new int[4][3];`
 
 W Javie tablice „dwuwymiarowe” są w rzeczywistości tablicami tablic. Każdy wiersz jest osobną tablicą w tablicy głównej. To oznacza, że wiersze mogą mieć różne długości.
 
-Dostęp do poszczególnych elementów tablic: `nazwa[i][j]` gdzie i jest wierszami, j jest kolumnami.&#x20;
+Dostęp do poszczególnych elementów tablic: `nazwa[i][j]` gdzie i jest wierszami, j jest kolumnami.
 
 ```java
 System.out.println(number2D[1][2]);
