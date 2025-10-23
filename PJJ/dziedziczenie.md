@@ -73,11 +73,11 @@ public class Main {
 }
 ```
 
-W powyższym przypadku stworzyliśmy dwa obiekty `Person` i `Student`. Obiekt `Student` przez to że dziedziczy po klasie `Person` ma dostęp do takich metod jak np. `getName()`.&#x20;
+W powyższym przypadku stworzyliśmy dwa obiekty `Person` i `Student`. Obiekt `Student` przez to że dziedziczy po klasie `Person` ma dostęp do takich metod jak np. `getName()`.
 
 ### **Nadpisywanie metod (@override)**
 
-W niektórych sytuacja klasa bazowa posiada metodę, którą chcemy nadpisać w klasie pochodnej. w tym celu dla zachowania czystości kodu dopisujemy przed tą metodą słówko `@override`, nie jest to wymagane ale zalecane. Poniżej przykład nadpisywania metod.&#x20;
+W niektórych sytuacja klasa bazowa posiada metodę, którą chcemy nadpisać w klasie pochodnej. w tym celu dla zachowania czystości kodu dopisujemy przed tą metodą słówko `@override`, nie jest to wymagane ale zalecane. Poniżej przykład nadpisywania metod.
 
 **Klasa Person**
 
@@ -127,14 +127,14 @@ public class Student  extends Person{
 }
 ```
 
-W powyższym przykładzie w klasie `Person` została zdefiniowana metoda `persent()`, której zadaniem jest przedstawianie się. W klasie `Student` została nadpisana metoda `present()`, w której poza tym że wykorzystujemy metodę z klasy bazowej to dodajemy dodatkową informację o numerze studenta. Aby wykorzystać metody z klasy bazowej musimy w klasie pochodnej zastosować słówko `super` przed wywołaniem metody.&#x20;
+W powyższym przykładzie w klasie `Person` została zdefiniowana metoda `persent()`, której zadaniem jest przedstawianie się. W klasie `Student` została nadpisana metoda `present()`, w której poza tym że wykorzystujemy metodę z klasy bazowej to dodajemy dodatkową informację o numerze studenta. Aby wykorzystać metody z klasy bazowej musimy w klasie pochodnej zastosować słówko `super` przed wywołaniem metody.
 
-### Klasa Abstrakcyjna&#x20;
+### Klasa Abstrakcyjna
 
 W języku Java klasy mogą być zwykłe lub abstrakcyjne.\
 Klasy abstrakcyjne są szablonami, które nie mogą być bezpośrednio tworzone (instancjonowane), ale mogą zawierać wspólne elementy dla innych klas.
 
-Klasa abstrakcyjna w definicja zawiera słowo kluczowe `abstract`. Taka deklaracja powoduje pewien problem ponieważ taka klasa nie może być utworzona (`new` jest niedozwolone).  Klasa abstrakcyjna może zawierać pola, zwykłe metody ( z implementacją), metody abstrakcyjne (tylko definicja), Każda klasa, która dziedziczy po klasie abstrakcyjnej musi zaimplementować metody abstrakcyjne, chyba że sama jest klasą abstrakcyjną.&#x20;
+Klasa abstrakcyjna w definicja zawiera słowo kluczowe `abstract`. Taka deklaracja powoduje pewien problem ponieważ taka klasa nie może być utworzona (`new` jest niedozwolone). Klasa abstrakcyjna może zawierać pola, zwykłe metody ( z implementacją), metody abstrakcyjne (tylko definicja), Każda klasa, która dziedziczy po klasie abstrakcyjnej musi zaimplementować metody abstrakcyjne, chyba że sama jest klasą abstrakcyjną.
 
 **Przykład klasy abstrakcyjnej**
 
@@ -215,7 +215,7 @@ Miau!
 
 ### Polimorfizm
 
-Polimorfizm w języku Java to jedna z podstawowych zasad programowania obiektowego, która pozwala różnym obiektom reagować w odmienny sposób na to samo wywołanie metody. Zachowanie to pozwala na tworzenie kodu bardziej elastycznego, i bazującego na typach ogólnych, a mimo to poprawnie wywołuje metody właściwe dla konkretnego typu obiektu w czasie działania programu.&#x20;
+Polimorfizm w języku Java to jedna z podstawowych zasad programowania obiektowego, która pozwala różnym obiektom reagować w odmienny sposób na to samo wywołanie metody. Zachowanie to pozwala na tworzenie kodu bardziej elastycznego, i bazującego na typach ogólnych, a mimo to poprawnie wywołuje metody właściwe dla konkretnego typu obiektu w czasie działania programu.
 
 ```java
 public class Main {
@@ -240,18 +240,26 @@ public class Main {
 }
 ```
 
-W powyższym przypadku klasy `Dog` i `Cat` dziedziczą po klasie abstrakcyjnej `Anima.` To rozwiązanie pozwala na wykorzystanie ogólnego typu `Animal` do przechowywanie obiektów klas `Dog` i `Cat` i jednoczenie zapewnia odpowiednie działanie metod dla odpowiednich obiektów.&#x20;
+W powyższym przypadku klasy `Dog` i `Cat` dziedziczą po klasie abstrakcyjnej `Anima.` To rozwiązanie pozwala na wykorzystanie ogólnego typu `Animal` do przechowywanie obiektów klas `Dog` i `Cat` i jednoczenie zapewnia odpowiednie działanie metod dla odpowiednich obiektów.
 
 ### Zadania
 
 1.  Napisz hierarchię klas, która symuluje różne typy zwierząt w zoo.\
     Każde zwierzę potrafi się przedstawić i wydawać dźwięki — ale każde robi to inaczej. Stwórz klasę bazową `Animal` z polami **name** i **age** oraz metody
 
-    `introduceYourself()`  - wypisuje imię i weki&#x20;
+    `introduceYourself()` - wypisuje imię i weki
 
     `voice()` i `eat()` - które domyślnie wypisują "głos" i "jedzenie".
 
     Stwórz kilka klas pochodnych, które będą reprezentować zwierzęta mieszkające w zoo. nadpisz metody `voice()` i `eat()` dostosowując je do odpowiednich zwierząt. Wyświetl w pętli informacje o zwierzętach mieszkających w zoo.
 2. Stwórz system, który potrafi obliczać pola różnych figur geometrycznych.\
    Każda figura ma nazwę i sposób obliczania pola — ale sposób ten zależy od typu figury. Stwórz klasę abstrakcyjną `Figura`, która będzie zawierać prywatne pola **nazwa, obwod, pole**, konstruktor ustawiający nazwę oraz dwie metody abstrakcyjne `void obliczPole()` i `void obliczObwod()`. oraz jedną metodę zwykłą `wyswietlInfo()`. Stwórz klasy potomne, które będą dziedziczyć po klasie Figura. Wykorzystaj tablicę `Figura[]` do przetestowania powyższego rozwiązania.
-3. Korzystając z zadania 4 z lekcji Obiekty i Klasy stwórz klasę `Employee` jako klasę abstrakcyjną oraz przerób metodę _`raiseSalary()`_ na metodę abstrakcyjną tak aby była implementowana w klasach potomnych. Dodaj metodę abstrakcyjną CalculateSalaries(), która w zależności od klasy będzie obliczać&#x20;
+3.  Korzystając z zadania 4 z lekcji Obiekty i Klasy stwórz klasę `Employee` jako klasę abstrakcyjną. Dodaj metodę abstrakcyjną `CalculateSalaries()`, która w zależności od klasy będzie obliczać pensje pracownika. Stwórz klasy pochodne, które będą reprezentować różne formy zatrudnienia np.&#x20;
+
+    `FullTimeEmployee`  - posiadający stałe wynagrodzenie
+
+    `ContractEmployee` - posiadający stawkę razy liczba godz.&#x20;
+
+    `Intern` - Jako pensja jest stypendium czyli stałą kwota wynagrodzenia.
+
+    Przetestuje działanie klasy tworząc tablicę lub listę pracowników zatrudnionych w różnych formach zatrudnienia.
