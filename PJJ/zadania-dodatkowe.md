@@ -33,6 +33,7 @@
     Proste wyświetlenie kontaktu w postaci
 
     &#x20;\- osoba imię nazwisko telefon, email.
-2. &#x20;\- firma nazwa firmy, telefon, email.
 
-Program powinien działać w konsoli. Wraz z poznaną wiedzą zadanie będzie otrzymywać kolejne uaktualnienia i dodatkowe rozwiązania.
+    &#x20;\- firma nazwa firmy, telefon, email.
+
+    Program powinien działać w konsoli. Wraz z poznaną wiedzą zadanie będzie otrzymywać kolejne uaktualnienia i dodatkowe rozwiązania.
