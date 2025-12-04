@@ -1,6 +1,10 @@
 # Zadania dodatkowe
 
-1.  Napisz aplikację, która będzie zarządzać kontaktami osób i firm.  Aplikacji powinna zawierać następującą funkcjonalność  dodawać i edytować kontakty oraz filtrować zapisane dane. Podstawowe założenia co do struktury klas:
+### Zadania dodatkowe
+
+1.  Napisz aplikację, która będzie zarządzać kontaktami osób i firm.  Aplikacji powinna zawierać następującą funkcjonalność  dodawać i edytować kontakty oraz filtrować zapisane dane.&#x20;
+
+    Podstawowe założenia co do struktury klas:
 
     **Typy kontaktu:**
 

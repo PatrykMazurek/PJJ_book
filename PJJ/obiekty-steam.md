@@ -91,7 +91,17 @@ Używaj `parallelStream()` tylko, gdy spełnione są te warunki:
 
 ### Zadania
 
+{% file src=".gitbook/assets/BoardGame.zip" %}
 
+1. Znajdź gry, które są dobrze oceniane (`ratingAverage` > 8.0), ale mają niski próg wejścia (`complexityAverage` < 2.0). Wypisz tylko ich nazwy.
+2. Wypisz tytuły gier dla których minimalny wiek (`min age`) > 15
+3. Wyszukaj gry, dla których liczba maksymalna graczy (`Max Player`) >= 10, wypisz tytuły. &#x20;
+4. Oblicz średni czas gry (`playTime`) dla wszystkich gier.
+5.  Posortuj gry według złożoności (`complexityAverage`) malejąco, wybierz 5 pierwszych i zapisz je do nowej listy.
+
+    _Wskazówka:_ Będziesz potrzebował `sorted(Comparator.comparing(...).reversed())` oraz operacji `limit(5)`.
+6. Pogrupuj gry według roku wydania. Chcemy otrzymać mapę `Map<Integer, List<BoardGame>>`, gdzie kluczem jest rok, a wartością lista gier wydanych w danym roku.
+7. Znajdź grę z największą liczbą ocen (`usersRated`), ale tylko spośród gier wydanych po roku 2015.
 
 ### Literatura dodatkowa&#x20;
 
