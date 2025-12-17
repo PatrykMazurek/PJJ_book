@@ -11,4 +11,5 @@
 * [Interfejsy Funkcyjne i Lambda](interfejsy-funkcyjne-i-lambda.md)
 * [Obiekty Steam](obiekty-steam.md)
 * [Obsługa plików](obsluga-plikow.md)
+* [Typy generyczne](typy-generyczne.md)
 * [Zadania dodatkowe](zadania-dodatkowe.md)
