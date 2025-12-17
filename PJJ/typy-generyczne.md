@@ -34,13 +34,75 @@ W kodzie możesz spotkasz się z jednoliterowymi oznaczeniami. Każda z poniższ
 
 **Budowa klas generycznych**
 
+```java
+public class Box<T> {
+    private T value;
 
+    public void set(T value) { this.value = value; }
+    public T get() { return value; }
+}
+```
+
+Przykład użycia
+
+```java
+Box<String> b1 = new Box<>();
+b1.set("abc");
+String x = b1.get();
+
+Box<Integer> b2 = new Box<>();
+b2.set(123);
+int y = b2.get();
+```
+
+Przykład dla klasy zawierającej kilka typów generycznych
+
+```java
+public class Pair<K, V> {
+    private final K key;
+    private final V value;
+
+    public Pair(K key, V value) {
+        this.key = key; this.value = value;
+    }
+
+    public K getKey() { return key; }
+    public V getValue() { return value; }
+}
+```
 
 **Budowa metod generycznych**&#x20;
 
+Czasami nie wymagane jest generowanie nowych klas generycznych a wystarczy stworzyć metody generyczne.&#x20;
 
+```java
+public static <T> T first(List<T> list) {
+    return list.get(0);
+}
+```
 
+Sposób użycia&#x20;
 
+```java
+String a = first(List.of("x", "y"));
+Integer b = first(List.of(1, 2, 3));
+```
+
+**Ograniczenie typów (bounds)**
+
+Czasami metody czy klasy wymagają ograniczenia do np. liczb (całkowitych czy zmiennoprzecinkowych. Wtedy mamy możliwość zastosować słówko `extends` i dziedziczyć np. po obiektach `Number`.&#x20;
+
+```java
+public static <T extends Number> double sum(T a, T b) {
+    return a.doubleValue() + b.doubleValue();
+}
+```
+
+lub obiekty, które implementują wybrany interfejs&#x20;
+
+```java
+public class X<T extends Number & Comparable<T>> { }
+```
 
 ### **Zadania**
 
