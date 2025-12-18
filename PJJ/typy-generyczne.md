@@ -112,4 +112,11 @@ public class X<T extends Number & Comparable<T>> { }
 
     `public static void swap(List list, int i, int j)`
 
-    Zadaniem metody będzie zamiana elementów z indeksu i na element z indeksu j. jeżeli któraś z podanych liczb wykroczy poza zakres listy wywołaj wyjątek `IndexOutOfBoundsException` . Przetestuj stworzoną metodę tak aby mogła działać dla listy z różnymi typami np. `list<String>`, `list<Integer>`&#x20;
+    Zadaniem metody będzie zamiana elementów z indeksu i na element z indeksu j. jeżeli któraś z podanych liczb wykroczy poza zakres listy wywołaj wyjątek `IndexOutOfBoundsException` . Przetestuj stworzoną metodę tak aby mogła działać dla listy z różnymi typami np. `list<String>`, list\<Integer>&#x20;
+4.  Stwórz system zarządzania drużynami w grze, gdzie każda drużyna może składać się z konkretnego typu bohaterów (np. drużyna samych Magów, samych Wojowników) lub drużyna mieszana, ale musi to być ktoś, kto jest Bohaterem.&#x20;
+
+    Stwórz klasę abstrakcyjną  `GameCharacter`, która posiada: Pole `imie` (String). Abstrakcyjną metodę `atakuj()`.
+
+    Stwórz dwie klasy dziedziczące po `GameCharacter`: `Wojownik` – jego metoda `atakuj()` wypisuje: _"Wojownik \[imie] macha mieczem!" oraz_ `Mag` – jego metoda `atakuj()` wypisuje: _"Mag \[imie] rzuca kulę ognia!"._&#x20;
+
+    Stwórz klasę generyczną `Gildia<T>`, która: zakłada że parametr `T` musi dziedziczyć po klasie `GameCharacter` , posiada listę członków typu `T`, posiada metodę `dodaj(T postac)`, posiada metodę `wywolajAtakWszystkich()`, która przejdzie po liście i wywoła metodę `atakuj()` na każdym elemencie.
