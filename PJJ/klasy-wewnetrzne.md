@@ -141,3 +141,9 @@ Trudne czytanie kodu w sytuacjach kiedy mamy wiele zagnieżdżonych klas w jedne
 
 
 **Dodatkowe materiały**&#x20;
+
+{% embed url="https://dev.to/dhanush9952/java-inner-classes-and-nested-classes-39a6" %}
+
+{% embed url="https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html" %}
+
+{% embed url="https://codegym.cc/pl/groups/posts/pl.1031.klasy-wewntrzne-java" %}
