@@ -12,4 +12,5 @@
 * [Obiekty Steam](obiekty-steam.md)
 * [Obsługa plików](obsluga-plikow.md)
 * [Typy generyczne](typy-generyczne.md)
+* [Klasy wewnętrzne](klasy-wewnetrzne.md)
 * [Zadania dodatkowe](zadania-dodatkowe.md)
