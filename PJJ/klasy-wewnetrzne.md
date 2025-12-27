@@ -102,11 +102,39 @@ public class OuterLocal {
 
 3.  Anonimowa klasa (anonymous class) &#x20;
 
+    implementacja "jednorazowa" interfejsu lub klasy bazowej, najczęściej wykorzystywana do implementacji interfejsów lub nasłuchiwania na jakieś wydarzenie (akcje związane z GUI)
 
+    Cechy
+
+    &#x20;\- bez nazwy, tworzona od razu np. `new Inferface() {...}`
+
+    &#x20;\- przydatna przy nadpisywaniu metod lub przy użyciu klas abstrakcyjnych.
+
+    Przykład:
+
+```java
+ublic class OuterAnonymous {
+
+    interface Greeter {
+        void greet();
+    }
+
+    public static void main(String[] args) {
+        Greeter g = new Greeter() {
+            @Override
+            public void greet() {
+                System.out.println("Hello from anonymous class");
+            }
+        };
+
+        g.greet();
+    }
+}
+```
 
 **Wady klas wewnętrznych i kiedy stosować**
 
-
+Trudne czytanie kodu w sytuacjach kiedy mamy wiele zagnieżdżonych klas w jednej klasie. duża zależność między klasami wewnętrznymi a zewnętrznymi, co może powodować wycieki pamięci. W sytuacji kiedy utrzymujemy przez długi czas obiekt klasy wewnętrznej utrzymana jest referencja do klasy zewnętrznej. W przypadku klas anonimowych i lokalnych utrudnione jest debadokwanie &#x20;
 
 **Zadania**
 
