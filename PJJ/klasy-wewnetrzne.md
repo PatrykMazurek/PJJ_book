@@ -100,17 +100,17 @@ public class OuterLocal {
 }
 ```
 
-3.  Anonimowa klasa (anonymous class) &#x20;
+3.  **Anonimowa klasa (anonymous class)**&#x20;
 
     implementacja "jednorazowa" interfejsu lub klasy bazowej, najczęściej wykorzystywana do implementacji interfejsów lub nasłuchiwania na jakieś wydarzenie (akcje związane z GUI)
 
-    Cechy
+    **Cechy**
 
     &#x20;\- bez nazwy, tworzona od razu np. `new Inferface() {...}`
 
     &#x20;\- przydatna przy nadpisywaniu metod lub przy użyciu klas abstrakcyjnych.
 
-    Przykład:
+    **Przykład**:
 
 ```java
 ublic class OuterAnonymous {
@@ -134,11 +134,20 @@ ublic class OuterAnonymous {
 
 **Wady klas wewnętrznych i kiedy stosować**
 
-Trudne czytanie kodu w sytuacjach kiedy mamy wiele zagnieżdżonych klas w jednej klasie. duża zależność między klasami wewnętrznymi a zewnętrznymi, co może powodować wycieki pamięci. W sytuacji kiedy utrzymujemy przez długi czas obiekt klasy wewnętrznej utrzymana jest referencja do klasy zewnętrznej. W przypadku klas anonimowych i lokalnych utrudnione jest debadokwanie &#x20;
+Wady klas wewnętrznych to przede wszystkim pogorszona czytelność kodu, zwłaszcza gdy w jednej klasie znajduje się wiele zagnieżdżonych definicji. Klasy wewnętrzne są też silnie powiązane z klasą zewnętrzną, co może prowadzić do problemów z pamięcią: niestatyczna klasa wewnętrzna przechowuje referencję do obiektu klasy zewnętrznej, więc długie przetrzymywanie obiektu klasy wewnętrznej może nieumyślnie uniemożliwić zwolnienie obiektu zewnętrznego (tzw. wyciek pamięci). Dodatkowo klasy anonimowe i lokalne mogą utrudniać debugowanie, ponieważ w śladach stosu pojawiają się mało czytelne nazwy (np. `Outer$1`).
 
 **Zadania**
 
+1.  Stwórz klasę `Samochod`, która zawiera klasę wewnętrzną `Silnik`, oraz prywatne pola `marka`, `model`, `czySilnikUruchomiony`, `prendkosc`. Klasa `Silnik` powinna mieć prywatne pole `moc` (int), `czyPracuje` oraz metody `uruchom()`, `zgas()`, `pobierzMoc()`. W klasie `Samochod` dodaj metody&#x20;
 
+    &#x20;\- `uruchomSilnik()`, która tworzy instancję `Silnik` jeżeli jeszcze nie istniej i zwraca prędkość,
+
+    &#x20;\- `zgaśSilnik()` metoda, która usuwa ślinik i ustawia prędkość na 0.&#x20;
+
+    Zwróć uwagę na walidację danych, nie można ustawić mocy < 0 Zwróć uwagę na konieczność posiadania instancji klasy zewnętrznej do tworzenia klasy wewnętrznej.
+2. Rozwijając klasę `Samochod`, dodaj statyczną klasę zagnieżdżoną `KoloryNadwozia` z metodą `losowyKolor()`, która zwraca losowy kolor z tablicy (np. "czerwony", "niebieski"). Użyj tej klasy w metodzie statycznej klasy `Samochod`, aby przypisać kolor bez tworzenia instancji `Samochod`. Porównaj różnice w dostępie do pól klasy zewnętrznej.
+3. Stwórz interfejs `Obserwator` z metodą `zaktualizowano(String dane)`. W klasie `SerwerDanych` utwórz listę obserwatorów i metodę `dodajObserwatora(Obserwator o)`. Użyj klas anonimowych do dodania dwóch różnych obserwatorów: jeden wypisuje dane na konsolę, drugi zapisuje do pliku. Symuluj aktualizację danych i sprawdź działanie.
+4. Napisz klasę `PasswordService`, która będzie zawierała metodę `boolean isStrong(String password)`. Wewnątrz tej metody zdefiniuj lokalną klasę (local class) o nazwie `Rules`, odpowiedzialną za sprawdzanie, czy podane hasło spełnia wymagania bezpieczeństwa. Hasło ma zostać uznane za silne, jeśli ma co najmniej 8 znaków, zawiera przynajmniej jedną wielką literę, przynajmniej jedną cyfrę oraz przynajmniej jeden znak specjalny spośród `!@#$%^&*`. Lokalna klasa `Rules` powinna udostępniać metodę `boolean checkAll()`, która wykonuje wszystkie sprawdzenia i zwraca wynik. W rozwiązaniu wykorzystaj fakt, że lokalna klasa może odwoływać się do zmiennej `password` przekazanej do metody, pamiętając jednocześnie o zasadzie, że zmienne lokalne używane wewnątrz klasy lokalnej muszą być `final` lub „effectively final” (czyli nie mogą być później modyfikowane). Na koniec przygotuj metodę `main`, w której przetestujesz działanie rozwiązania na czterech przykładowych hasłach — dwóch słabych i dwóch silnych — i wypiszesz wynik w postaci informacji, czy dane hasło jest silne.
 
 **Dodatkowe materiały**&#x20;
 
