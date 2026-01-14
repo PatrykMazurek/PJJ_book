@@ -13,4 +13,5 @@
 * [Obsługa plików](obsluga-plikow.md)
 * [Typy generyczne](typy-generyczne.md)
 * [Klasy wewnętrzne](klasy-wewnetrzne.md)
+* [Testowanie kodu](testowanie-kodu.md)
 * [Zadania dodatkowe](zadania-dodatkowe.md)
