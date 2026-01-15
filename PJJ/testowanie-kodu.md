@@ -155,10 +155,28 @@ class CalculatorParamTest {
 Zadania
 
 1. Stwórz klasę `StringUtils` z metodami `isPalindrome(String)` i `reverse(String)`. Napisz 4 testy w `StringUtilsTest` używając `@Test` i `assert*`.
-2.  Rozszerz klasę `Calculator` z `add(int a, int b)` o `history` (lista wyników). Napisz testy z `@BeforeEach` (czyszczenie historii) i `@AfterEach` (logowanie wyników).
+2.  Stwórz klasy `Calculator`, która będzie posiadać następujące metody:
 
-    Dodaj `private List<Integer> history = new ArrayList<>();` i `addHistory(int result)`.\
-    **Pytania:**
+    1. `add(int a, int b)` – zwraca sumę dwóch liczb.
+    2. `divide(int a, int b)` – zwraca wynik dzielenia. Jeśli `b` wynosi 0, rzuca wyjątek `ArithmeticException`.
+    3. `isEven(int n)` – zwraca `true`, jeśli liczba jest parzysta, i `false` w przeciwnym razie.
 
-    1. Co się stanie bez `@BeforeEach`?&#x20;
-    2. Czy `@AfterEach` wykona się przy failu?
+    Stwórz testy sprawdzające klasę `Calculator`, testy mają sprawdzić:
+
+    1. Sprawdź poprawność dodawania dla liczb dodatnich i ujemnych.
+    2. Sprawdź poprawność dzielenia liczb całkowitych.
+    3. Kluczowe: Użyj `assertThrows`, aby sprawdzić, czy dzielenie przez 0 rzuca odpowiedni wyjątek.
+    4. Przetestuj metodę `isEven` dla liczb parzystych, nieparzystych oraz dla zera.
+3.  Stwórz klasy `ShoppingCart`, która będzie symulować koszyk zakupowy i będzie posadać następujące metody:
+
+    1. `addItem(String item, double price)` – dodaje przedmiot do listy i zwiększa sumę koszyka. Cena nie może być ujemna (powinien polecieć wyjątek).
+    2. `removeItem(String item)` – usuwa przedmiot i zmniejsza sumę. Jeśli przedmiotu nie ma, nic nie robi.
+    3. `getTotalPrice()` – zwraca aktualną wartość koszyka.
+    4. `clear()` – czyści koszyk.
+
+    Stwórz testy sprawdzające klasę `ShoppingCart`, testy mają sprawdzić:
+
+    1. Użyj adnotacji `@BeforeEach` do inicjalizacji pustego koszyka przed każdym testem.
+    2. Sprawdź, czy dodanie przedmiotów poprawnie aktualizuje sumę (`assertEquals` z deltą dla liczb zmiennoprzecinkowych).
+    3. Sprawdź, czy próba dodania przedmiotu z ujemną ceną rzuca wyjątek.
+    4. Zweryfikuj, czy po wywołaniu `clear()` lista przedmiotów jest pusta, a suma wynosi 0.0.
